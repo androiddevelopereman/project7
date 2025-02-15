@@ -25,7 +25,7 @@
           class="form-control"
           id="username"
           :placeholder="$t('Enter your Username')"
-          v-model="username"
+          v-model="email"
           required
         />
       </div>
@@ -72,18 +72,14 @@ const togglePassword = () => {
 
 const handleLogin = async () => {
   try {
-    // بيانات تسجيل الدخول
-    const loginData = {
-      email: email.value,
-      password: password.value,
-    };
-
+    const base = "https://9c2ed214-2071-4c26-94e5-5bbcdf6df55a.mock.pstmn.io";
+    // const base = "http://192.168.100.22:8091";
     const response = await axios.post(
-      "http://192.168.100.22:8091/api/auth/login?username=eman-tst&password=123456@Eman&type=web",
-      loginData
+      `${base}/api/auth/login?username=${email.value}&password=${password.value}&type=web`
     );
 
     console.log("Login successful:", response.data);
+    localStorage.setItem("userData", JSON.stringify(response.data));
 
     router.push("/Users");
   } catch (error) {

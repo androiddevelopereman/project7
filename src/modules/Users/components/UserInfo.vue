@@ -13,7 +13,7 @@
             <div class="form-container">
               <div class="form-group">
                 <label>{{ $t("Full Name*") }}</label>
-                <input type="text" required />
+                <input type="text" v-model="formData.name" required />
               </div>
               <br />
               <div class="form-group">
@@ -64,6 +64,12 @@
 import NavBar from "../components/NavBar.vue";
 import Sidebar from "../components/Sidebar.vue";
 import ProfileSidebar from "./ProfileSidebar.vue";
+
+const formData = ref({
+  name: null,
+});
+
+const userData = ref(JSON.parse(localStorage.getItem("userData")));
 </script>
 <style scoped>
 .page {
