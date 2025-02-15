@@ -72,8 +72,7 @@ const togglePassword = () => {
 
 const handleLogin = async () => {
   try {
-    const base = "https://9c2ed214-2071-4c26-94e5-5bbcdf6df55a.mock.pstmn.io";
-    // const base = "http://192.168.100.22:8091";
+    const base = "http://192.168.100.22:8091";
     const response = await axios.post(
       `${base}/api/auth/login?username=${email.value}&password=${password.value}&type=web`
     );

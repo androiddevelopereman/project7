@@ -64,12 +64,16 @@
 import NavBar from "../components/NavBar.vue";
 import Sidebar from "../components/Sidebar.vue";
 import ProfileSidebar from "./ProfileSidebar.vue";
+import { ref } from "vue";
 
 const formData = ref({
   name: null,
 });
 
-const userData = ref(JSON.parse(localStorage.getItem("userData")));
+const userDataJson = localStorage.getItem("userData");
+const userData = ref(JSON.parse(userDataJson));
+
+formData.value.name = userData.value.user.name;
 </script>
 <style scoped>
 .page {
