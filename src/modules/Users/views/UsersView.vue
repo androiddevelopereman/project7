@@ -1,23 +1,20 @@
 <script setup>
-
 import Sidebar from "../components/Sidebar.vue";
 import Tabs from "../components/Tabs.vue";
 import NavBar from "../components/NavBar.vue";
 </script>
 <template>
+  <div class="app-container">
+    <Sidebar />
 
-    <div class="app-container">
-        <Sidebar />
+    <div class="content-bar">
+      <NavBar />
+      <hr />
 
-        <div class="content-bar">
-            <NavBar />
-            <hr>
-
-            <Tabs />
-
-        </div>
+      <Tabs />
     </div>
-    <!-- <div class="users-container">
+  </div>
+  <!-- <div class="users-container">
 
         <Tabs />
 
@@ -25,17 +22,16 @@ import NavBar from "../components/NavBar.vue";
 </template>
 <style scoped>
 .app-container {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #F0F5FA;
-    display: flex;
-
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f5fa;
+  display: flex;
 }
 
 .content-bar {
-    background-color: #F0F5FA;
-    width: 100% !important;
+  background-color: #f0f5fa;
+  width: 100% !important;
 }
 </style>
